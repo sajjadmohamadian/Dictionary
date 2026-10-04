@@ -387,13 +387,20 @@ async function startServer() {
   if (!isProd) {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        hmr: false,
+      },
       appType: 'spa'
     });
     app.use(vite.middlewares);
 
     app.use('*', async (req, res, next) => {
       const url = req.originalUrl;
+      // Skip API requests and static asset requests with file extensions
+      if (url.startsWith('/api') || path.extname(url)) {
+        return next();
+      }
       try {
         let template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
