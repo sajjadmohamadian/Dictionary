@@ -1,0 +1,6 @@
+{
+  "name": "Sözlük: Iranian Azerbaijani – Persian Dictionary",
+  "description": "Comprehensive bidirectional dictionary and linguistic reference for Iranian Azerbaijani Turkish and Persian with intelligent orthographic search, dialectal notes, and AI linguistics assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
