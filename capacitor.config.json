@@ -1,0 +1,9 @@
+{
+  "appId": "com.sozluk.dictionary",
+  "appName": "سؤزلوک: لغت‌نامه ترکی آذربایجانی",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
